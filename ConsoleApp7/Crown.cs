@@ -4,10 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-internal class Program
+public class Crown : IItem
 {
-    static void Main(string[] args)
-    {
-
-    }
+    public string Name => "Корона";
 }

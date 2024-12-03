@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-internal class Program
+public interface IItem
 {
-    static void Main(string[] args)
-    {
+    string Name { get; }
 
-    }
+    void Property();
 }
