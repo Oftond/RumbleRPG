@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AWeapon.cs" />
+    <Compile Include="Crown.cs" />
+    <Compile Include="Food.cs" />
+    <Compile Include="AArmor.cs" />
+    <Compile Include="IItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
