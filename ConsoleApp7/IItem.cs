@@ -8,5 +8,5 @@ public interface IItem
 {
     string Name { get; }
 
-    void Property();
+    int Price { get; }
 }
