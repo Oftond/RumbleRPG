@@ -43,12 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AWeapon.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Weapon.cs" />
     <Compile Include="Bone.cs" />
     <Compile Include="ClotOfMucus.cs" />
     <Compile Include="Crown.cs" />
     <Compile Include="Food.cs" />
-    <Compile Include="AArmor.cs" />
+    <Compile Include="Armor.cs" />
     <Compile Include="IItem.cs" />
     <Compile Include="IMonsterDrop.cs" />
     <Compile Include="Program.cs" />
