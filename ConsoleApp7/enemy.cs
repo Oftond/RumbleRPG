@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class enemy : ICharacter
+public abstract class enemy : ICharacter
 {
+    public int _specDamage;
+    public IMonsterDrop lout;
+    public int count;
     public event Action<enemy> onDath;
     public event Action<enemy> damage;
     Random random = new Random();
@@ -27,7 +30,16 @@ class enemy : ICharacter
         }
         set => _baseDamage = value;
     }
+    public void SpecAttack()
+    {
+        _specDamage += Hero.MaxHP;
+    }
+    public void LoutDrop()
+    {
+        Console.WriteLine($"Из {Name} выпало {lout}");
+        return lout;
+    }
     public int Armores { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     public string Name { get; }
-    
 }
+

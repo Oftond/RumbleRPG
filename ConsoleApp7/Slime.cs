@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-interface ICharacter
+public class Slime : enemy
 {
-    int HP { get; }
-    int Armores { get; set; }
-    int Damage { get; set; }
-
+    public Slime(string name, IMonsterDrop lout, int hp) : base()
+    {
+    }
 }

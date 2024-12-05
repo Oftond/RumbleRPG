@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class Weapon
+public abstract class Weapon
 {
     public string Name { get; }
     public int minDamage { get; private set; }
