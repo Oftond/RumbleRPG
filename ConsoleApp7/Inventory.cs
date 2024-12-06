@@ -14,20 +14,19 @@ public class Inventory
         MaxItems = maxitems;
     }
 
-    public bool searchItem<T> (ref T search)
+    public bool searchItem<T>(T search)
     {
         foreach (var item in items)
         {
-            if (item is T alo)
+            if (item is T food)
             {
-                search = alo;
                 return true;
             }
         }
         return false;
     }
 
-    public bool addItem(Iitem item)
+    public bool addItem(IItem item)
     {
         if (items.Count < MaxItems)
         {
@@ -38,8 +37,24 @@ public class Inventory
             return false;
     }
 
-    public void removeItem(Iitem item)
+    public void removeItem(IItem item)
     {
         items.Remove(item);
+    }
+
+    public void ShowInv()
+    {
+        foreach (var item in items)
+        {
+            Console.WriteLine(item.Name);
+        }
+    }
+
+    public void ShowFood()
+    {
+        foreach(var item in items.Where(x => x is Food))
+        {
+            Console.WriteLine(item);
+        }
     }
 }
