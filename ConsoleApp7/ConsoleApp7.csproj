@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ABoss.cs" />
+    <Compile Include="BossOfGym.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="SquirrelEater.cs" />
