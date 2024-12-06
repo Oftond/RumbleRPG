@@ -10,31 +10,30 @@ public abstract class enemy : ICharacter
     public int _specDamage;
     public IMonsterDrop lout;
     public int count;
-    public event Action<enemy> onDath;
-    public event Action<enemy> damage;
     Random random = new Random();
-    private int _baseDamage = 5;
-    private int _hp;
+    protected int _baseDamage = 5;
+    protected int _hp;
     public Weapon weapon;
+    public Armor armor;
 
-    protected enemy(string name, IMonsterDrop lout, int hp)
+    protected enemy(string name, IMonsterDrop lout, int hp, Armor armor, Weapon weapon)
     {
         Name = name;
         this.lout = lout;
         HP = hp;
+        this.armor = armor;
+        this.weapon = weapon;
     }
 
     public int HP { get => _hp; private set => _hp = value; }
-    public int Damage {
+    public int Damage
+    {
         get { if (weapon == null) {  return _baseDamage; }
             else 
-            { return weapon.GetDamage() + _baseDamage; } }
-        set => _baseDamage = value;
+            { return weapon.Damage + _baseDamage; } }
     }
     public abstract void SpecAttack();
     public abstract void Attack();
-    public abstract void LoutDrop();
-    public int Armores { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    
+    public abstract void GetDamage(ICharacter character);
+    public abstract IMonsterDrop LoutDrop();
 }
-

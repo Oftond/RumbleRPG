@@ -8,8 +8,18 @@ namespace ConsoleApp7
 {
     class Player : ICharacter
     {
+        public string name;
+        private int hp;
+        private int _maxHp;
+        private int damage;
+        private int coins;
+        private int maxitems;
+
+        public int HP => hp;
+
         public Player(string name, int hp, int Damage, int maxitems)
         {
+            _maxHp = hp;
             this.maxitems = maxitems;
             this.name = name;
             this.hp = hp;
@@ -18,11 +28,6 @@ namespace ConsoleApp7
             typearmor = null;
             inv = new Inventory(maxitems);
         }
-        public string name;
-        public int hp;
-        public int damage;
-        public int coins;
-        public int maxitems;
 
         public int Damage => damage + typeWeapon.Damage;
         public Weapon typeWeapon;
@@ -53,26 +58,22 @@ namespace ConsoleApp7
 
         public void rest()
         {
-            hp += 1000;
+            hp = _maxHp;
         }
 
         public void healitem(IItem item)
         {
-            if (inv.searchItem(item))
+            if (item is Food food)
             {
-                inv.ShowFood();
-                if (item is Food food)
-                {
-                    hp += food.RecoverHP;
-                }
+                hp += food.RecoverHP;
             }
-            else
-                Console.WriteLine("тебе нечем лечиться");
         }
 
         public void attack(enemy enemy)
         {
-            enemy.hp -= Damage;
+            enemy.GetDamage(this);
+            Console.WriteLine($"{name} ударил {enemy.Name}");
+            Console.WriteLine($"{enemy.Name} получил {Damage} урона");
         }
 
         public void takedamage(int damage)

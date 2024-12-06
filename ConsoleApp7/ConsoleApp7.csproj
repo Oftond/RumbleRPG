@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Inventory.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Weapon.cs" />
@@ -58,18 +57,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RottenFlesh.cs" />
     <Compile Include="WormsTooth.cs" />
-=======
-    <Compile Include="Armor.cs" />
     <Compile Include="enemy.cs" />
     <Compile Include="ICharacter.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skillet.cs" />
     <Compile Include="Slime.cs" />
-    <Compile Include="Weapon.cs" />
     <Compile Include="Worm.cs" />
     <Compile Include="Zombie.cs" />
->>>>>>> 4edfdf1bd9ad03c575a5d175bfd00066fa5fdbc4
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

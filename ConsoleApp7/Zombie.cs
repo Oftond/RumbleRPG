@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 class Zombie : enemy
 {
-    public Zombie(string name, IMonsterDrop lout, int hp) : base(name, lout, hp)
+    public Zombie(string name, IMonsterDrop lout, int hp, Armor armor, Weapon weapon) : base(name, lout, hp, armor, weapon)
     { }
     public override void Attack()
     {
@@ -21,5 +21,9 @@ class Zombie : enemy
         Console.WriteLine($"{Name} Погиб!\t Из него выпало {lout}");
         return lout;
     }
-}
 
+    public override void GetDamage(ICharacter character)
+    {
+        _hp -= character.Damage - armor.Defence <= 0 ? 1 : character.Damage - armor.Defence;
+    }
+}
