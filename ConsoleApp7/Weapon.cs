@@ -42,7 +42,6 @@ public abstract class Weapon
             maxDamage = 10;
         }
     }
-
     public int GetDamage() => (minDamage + maxDamage) / 2;
 }
 

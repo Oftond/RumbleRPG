@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Slime : enemy
+class Zombie : enemy
 {
-
-    public Slime(string name, IMonsterDrop lout, int hp) : base(name, lout, hp)
-    {
-
-    }
+    public Zombie(string name, IMonsterDrop lout, int hp) : base(name, lout, hp)
+    { }
     public override void Attack()
     {
         Console.WriteLine($"{Name} атакует {weapon.Name}!");
@@ -25,3 +22,4 @@ public class Slime : enemy
         return lout;
     }
 }
+
