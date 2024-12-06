@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABoss.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="SquirrelEater.cs" />
+    <Compile Include="TextBosses.cs" />
     <Compile Include="Weapon.cs" />
     <Compile Include="Bone.cs" />
     <Compile Include="ClotOfMucus.cs" />

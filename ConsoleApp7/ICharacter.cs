@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 public interface ICharacter
 {
+    string Name { get; }
     int HP { get; }
     int Damage { get; }
 }

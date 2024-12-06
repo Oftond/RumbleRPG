@@ -8,9 +8,10 @@ class Zombie : enemy
 {
     public Zombie(string name, IMonsterDrop lout, int hp, Armor armor, Weapon weapon) : base(name, lout, hp, armor, weapon)
     { }
-    public override void Attack()
+    public override void Attack(Player character)
     {
-        Console.WriteLine($"{Name} атакует {weapon.Name}!");
+        Console.WriteLine($"{Name} атакует {character.Name}!");
+        character.takedamage(Damage);
     }
     public override void SpecAttack()
     {
@@ -18,7 +19,7 @@ class Zombie : enemy
     }
     public override IMonsterDrop LoutDrop()
     {
-        Console.WriteLine($"{Name} Погиб!\t Из него выпало {lout}");
+        Console.WriteLine($"{Name} Погиб!\n Из него выпало {lout}");
         return lout;
     }
 

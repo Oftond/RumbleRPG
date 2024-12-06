@@ -10,9 +10,10 @@ public class Slime : enemy
     {
 
     }
-    public override void Attack()
+    public override void Attack(Player character)
     {
-        Console.WriteLine($"{Name} атакует {weapon.Name}!");
+        Console.WriteLine($"{Name} атакует {character.Name}!");
+        character.takedamage(Damage);
     }
     public override void SpecAttack()
     {
